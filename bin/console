@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require(File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'tkw', 'ui_ldap'))
+
+require 'thor'
+
+class Main < Thor
+  register UI::User, :users, 'users', 'Options with users.'
+end
+
+Main.start(ARGV) if __FILE__ == $PROGRAM_NAME
